@@ -1,0 +1,47 @@
+{
+  "experiment": "exp0_baselines",
+  "timestamp": "2026-04-06T19:45:58.014091",
+  "description": "reference quality audit + copy-source baseline on test sets",
+  "results": {
+    "sells": {
+      "n": 23416,
+      "ref_ent_p": 0.2142,
+      "ref_ent_r": 0.1994,
+      "ref_ent_f1": 0.1943,
+      "ref_d_fre": 4.1,
+      "ref_d_fkg": -0.68,
+      "copy_sari": 7.05,
+      "src_ref_bertscore": 0.6565
+    },
+    "medlane": {
+      "n": 1010,
+      "ref_ent_p": 0.6571,
+      "ref_ent_r": 0.7036,
+      "ref_ent_f1": 0.6743,
+      "ref_d_fre": -10.07,
+      "ref_d_fkg": 2.17,
+      "copy_sari": 29.85,
+      "src_ref_bertscore": 0.9022
+    },
+    "cochrane": {
+      "n": 480,
+      "ref_ent_p": 0.4642,
+      "ref_ent_r": 0.3138,
+      "ref_ent_f1": 0.3651,
+      "ref_d_fre": -3.63,
+      "ref_d_fkg": 2.08,
+      "copy_sari": 9.62,
+      "src_ref_bertscore": 0.6188
+    },
+    "plaba": {
+      "n": 1000,
+      "ref_ent_p": 0.4765,
+      "ref_ent_r": 0.4908,
+      "ref_ent_f1": 0.4702,
+      "ref_d_fre": 14.47,
+      "ref_d_fkg": -1.97,
+      "copy_sari": 18.44,
+      "src_ref_bertscore": 0.7983
+    }
+  }
+}

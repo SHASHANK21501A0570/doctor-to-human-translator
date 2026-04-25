@@ -1,0 +1,161 @@
+{
+  "experiment": "exp2v2_sells_only",
+  "timestamp": "2026-04-13T09:34:12.353890",
+  "description": "Llama 3.1 8B Instruct + QLoRA, fine-tuned on SELLS only, 4-bit NF4 training, bf16 inference (merged), SDPA, response-only masking, bootstrap 95% CIs (n=1000, seed=42). V2: uses manual response-only masking (standard Trainer) for consistency with Exp 3a.",
+  "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "vram_gb": 85.1,
+  "training_precision": "4-bit NF4 (bf16 compute, QLoRA)",
+  "inference_precision": "bf16 (LoRA merged into base, same as Exp 1)",
+  "attn_implementation": "sdpa",
+  "seed": 42,
+  "training_config": {
+    "train_data": "SELLS only",
+    "train_size": 168241,
+    "val_size": 42259,
+    "max_seq_length": 1024,
+    "response_only_masking": true,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "learning_rate": 0.0002,
+    "effective_batch_size": 64,
+    "num_epochs_set": 3,
+    "best_step": "/content/drive/MyDrive/Gatekeepn't/models/exp2v2_sells_only/checkpoint-2500",
+    "best_eval_loss": 2.016,
+    "total_steps": 4000
+  },
+  "generation_config": {
+    "max_new_tokens": 1024,
+    "do_sample": false,
+    "repetition_penalty": 1.1
+  },
+  "test_sizes": {
+    "sells": 23416,
+    "medlane": 1010,
+    "cochrane": 480,
+    "plaba": 1000
+  },
+  "library_versions": {
+    "transformers": "5.0.0",
+    "torch": "2.10.0+cu128",
+    "peft": "0.18.1",
+    "bitsandbytes": "0.49.2",
+    "datasets": "4.0.0",
+    "bert_score": "0.3.12"
+  },
+  "results": {
+    "sells": {
+      "n": 23416,
+      "sari": 37.73,
+      "bert_f1": 0.63,
+      "ent_p": 0.1786,
+      "ent_r": 0.1575,
+      "ent_f1": 0.1589,
+      "d_fre": 16.19,
+      "d_fkg": -2.38,
+      "n_empty": 0,
+      "n_read": 23416,
+      "sari_ci": [
+        37.6547,
+        37.8092
+      ],
+      "bert_f1_ci": [
+        0.6293,
+        0.6307
+      ],
+      "ent_f1_ci": [
+        0.1571,
+        0.1609
+      ],
+      "d_fre_ci": [
+        15.8579,
+        16.5275
+      ]
+    },
+    "medlane": {
+      "n": 1010,
+      "sari": 14.63,
+      "bert_f1": 0.628,
+      "ent_p": 0.1513,
+      "ent_r": 0.1441,
+      "ent_f1": 0.1372,
+      "d_fre": 3.98,
+      "d_fkg": -0.9,
+      "n_empty": 0,
+      "n_read": 1010,
+      "sari_ci": [
+        14.1239,
+        15.129
+      ],
+      "bert_f1_ci": [
+        0.6243,
+        0.6317
+      ],
+      "ent_f1_ci": [
+        0.1272,
+        0.1481
+      ],
+      "d_fre_ci": [
+        2.2029,
+        5.7002
+      ]
+    },
+    "cochrane": {
+      "n": 480,
+      "sari": 34.13,
+      "bert_f1": 0.5722,
+      "ent_p": 0.5007,
+      "ent_r": 0.0612,
+      "ent_f1": 0.1071,
+      "d_fre": -3.32,
+      "d_fkg": 2.98,
+      "n_empty": 0,
+      "n_read": 480,
+      "sari_ci": [
+        33.715,
+        34.5111
+      ],
+      "bert_f1_ci": [
+        0.5679,
+        0.5769
+      ],
+      "ent_f1_ci": [
+        0.1019,
+        0.1122
+      ],
+      "d_fre_ci": [
+        -5.3162,
+        -1.4717
+      ]
+    },
+    "plaba": {
+      "n": 1000,
+      "sari": 30.57,
+      "bert_f1": 0.6436,
+      "ent_p": 0.1849,
+      "ent_r": 0.1807,
+      "ent_f1": 0.1726,
+      "d_fre": 14.45,
+      "d_fkg": -1.49,
+      "n_empty": 0,
+      "n_read": 1000,
+      "sari_ci": [
+        29.9529,
+        31.1462
+      ],
+      "bert_f1_ci": [
+        0.6397,
+        0.6476
+      ],
+      "ent_f1_ci": [
+        0.1632,
+        0.1819
+      ],
+      "d_fre_ci": [
+        12.6727,
+        16.2201
+      ]
+    }
+  }
+}

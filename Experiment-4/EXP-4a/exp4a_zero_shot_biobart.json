@@ -1,0 +1,145 @@
+{
+  "experiment": "exp4a_zero_shot_biobart",
+  "timestamp": "2026-04-19T03:02:25.482145",
+  "description": "Zero-shot BioBART-v2-large (GanjinZero/biobart-v2-large), bf16, no fine-tuning, batched greedy decoding, full test sets, bootstrap 95% CIs (n=1000, seed=42)",
+  "model": "GanjinZero/biobart-v2-large",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "vram_gb": 85.1,
+  "precision": "bf16",
+  "architecture": "encoder-decoder (seq2seq)",
+  "seed": 42,
+  "generation_config": {
+    "max_new_tokens": 1024,
+    "encoder_max_length": 1024,
+    "do_sample": false,
+    "repetition_penalty": 1.1,
+    "batch_short": 128,
+    "batch_long": 64
+  },
+  "test_sizes": {
+    "sells": 23416,
+    "medlane": 1010,
+    "cochrane": 480,
+    "plaba": 1000
+  },
+  "library_versions": {
+    "transformers": "5.0.0",
+    "torch": "2.10.0+cu128",
+    "datasets": "4.0.0",
+    "bert_score": "0.3.12"
+  },
+  "results": {
+    "sells": {
+      "n": 23416,
+      "sari": 10.57,
+      "bert_f1": 0.5991,
+      "ent_p": 0.4771,
+      "ent_r": 0.9425,
+      "ent_f1": 0.6271,
+      "d_fre": -21.72,
+      "d_fkg": 6.92,
+      "n_empty": 0,
+      "n_read": 23416,
+      "sari_ci": [
+        10.5126,
+        10.6287
+      ],
+      "bert_f1_ci": [
+        0.5985,
+        0.5996
+      ],
+      "ent_f1_ci": [
+        0.6258,
+        0.6285
+      ],
+      "d_fre_ci": [
+        -21.8663,
+        -21.5866
+      ]
+    },
+    "medlane": {
+      "n": 1010,
+      "sari": 32.11,
+      "bert_f1": 0.7106,
+      "ent_p": 0.4092,
+      "ent_r": 0.9238,
+      "ent_f1": 0.5573,
+      "d_fre": -39.08,
+      "d_fkg": 9.27,
+      "n_empty": 0,
+      "n_read": 1010,
+      "sari_ci": [
+        31.6643,
+        32.5896
+      ],
+      "bert_f1_ci": [
+        0.7074,
+        0.7139
+      ],
+      "ent_f1_ci": [
+        0.5485,
+        0.5662
+      ],
+      "d_fre_ci": [
+        -39.9042,
+        -38.2016
+      ]
+    },
+    "cochrane": {
+      "n": 480,
+      "sari": 23.35,
+      "bert_f1": 0.6111,
+      "ent_p": 0.7672,
+      "ent_r": 0.864,
+      "ent_f1": 0.8071,
+      "d_fre": -2.95,
+      "d_fkg": 0.84,
+      "n_empty": 0,
+      "n_read": 480,
+      "sari_ci": [
+        22.6836,
+        24.0544
+      ],
+      "bert_f1_ci": [
+        0.6064,
+        0.6159
+      ],
+      "ent_f1_ci": [
+        0.7998,
+        0.8139
+      ],
+      "d_fre_ci": [
+        -3.2772,
+        -2.6289
+      ]
+    },
+    "plaba": {
+      "n": 1000,
+      "sari": 21.63,
+      "bert_f1": 0.6881,
+      "ent_p": 0.4355,
+      "ent_r": 0.9125,
+      "ent_f1": 0.582,
+      "d_fre": -26.58,
+      "d_fkg": 7.44,
+      "n_empty": 0,
+      "n_read": 1000,
+      "sari_ci": [
+        21.0077,
+        22.2863
+      ],
+      "bert_f1_ci": [
+        0.6838,
+        0.6923
+      ],
+      "ent_f1_ci": [
+        0.5728,
+        0.5906
+      ],
+      "d_fre_ci": [
+        -27.3558,
+        -25.7944
+      ]
+    }
+  }
+}

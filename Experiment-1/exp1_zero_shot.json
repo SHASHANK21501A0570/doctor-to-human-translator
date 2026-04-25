@@ -1,0 +1,143 @@
+{
+  "experiment": "exp1_zero_shot",
+  "timestamp": "2026-04-09T21:12:02.054062",
+  "description": "Zero-shot Llama 3.1 8B Instruct, bf16 + SDPA, no fine-tuning, batched greedy decoding, full test sets, bootstrap 95% CIs (n=1000, seed=42)",
+  "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "vram_gb": 85.1,
+  "precision": "bf16",
+  "attn_implementation": "sdpa",
+  "generation_config": {
+    "max_new_tokens": 1024,
+    "do_sample": false,
+    "repetition_penalty": 1.1,
+    "batch_short": 128,
+    "batch_long": 64
+  },
+  "test_sizes": {
+    "sells": 23416,
+    "medlane": 1010,
+    "cochrane": 480,
+    "plaba": 1000
+  },
+  "library_versions": {
+    "transformers": "4.46.3",
+    "torch": "2.10.0+cu128",
+    "datasets": "3.2.0",
+    "bert_score": "0.3.12"
+  },
+  "results": {
+    "sells": {
+      "n": 23416,
+      "sari": 36.5,
+      "bert_f1": 0.5521,
+      "ent_p": 0.097,
+      "ent_r": 0.2117,
+      "ent_f1": 0.1251,
+      "d_fre": 36.14,
+      "d_fkg": -5.01,
+      "n_empty": 0,
+      "n_read": 23416,
+      "sari_ci": [
+        36.4416,
+        36.5675
+      ],
+      "bert_f1_ci": [
+        0.5516,
+        0.5526
+      ],
+      "ent_f1_ci": [
+        0.1236,
+        0.1264
+      ],
+      "d_fre_ci": [
+        35.8202,
+        36.4409
+      ]
+    },
+    "medlane": {
+      "n": 1010,
+      "sari": 16.6,
+      "bert_f1": 0.6034,
+      "ent_p": 0.1187,
+      "ent_r": 0.307,
+      "ent_f1": 0.1598,
+      "d_fre": 5.05,
+      "d_fkg": 0.59,
+      "n_empty": 0,
+      "n_read": 1010,
+      "sari_ci": [
+        16.1171,
+        17.0885
+      ],
+      "bert_f1_ci": [
+        0.5998,
+        0.6069
+      ],
+      "ent_f1_ci": [
+        0.1521,
+        0.1676
+      ],
+      "d_fre_ci": [
+        3.5561,
+        6.526
+      ]
+    },
+    "cochrane": {
+      "n": 480,
+      "sari": 40.12,
+      "bert_f1": 0.5984,
+      "ent_p": 0.2573,
+      "ent_r": 0.1741,
+      "ent_f1": 0.2047,
+      "d_fre": 6.95,
+      "d_fkg": 0.28,
+      "n_empty": 0,
+      "n_read": 480,
+      "sari_ci": [
+        39.7614,
+        40.4631
+      ],
+      "bert_f1_ci": [
+        0.5959,
+        0.601
+      ],
+      "ent_f1_ci": [
+        0.1985,
+        0.2102
+      ],
+      "d_fre_ci": [
+        5.6261,
+        8.2419
+      ]
+    },
+    "plaba": {
+      "n": 1000,
+      "sari": 32.25,
+      "bert_f1": 0.6174,
+      "ent_p": 0.1309,
+      "ent_r": 0.2716,
+      "ent_f1": 0.1655,
+      "d_fre": 27.12,
+      "d_fkg": -2.74,
+      "n_empty": 0,
+      "n_read": 1000,
+      "sari_ci": [
+        31.7039,
+        32.8235
+      ],
+      "bert_f1_ci": [
+        0.614,
+        0.6206
+      ],
+      "ent_f1_ci": [
+        0.1585,
+        0.1728
+      ],
+      "d_fre_ci": [
+        25.5704,
+        28.8257
+      ]
+    }
+  }
+}

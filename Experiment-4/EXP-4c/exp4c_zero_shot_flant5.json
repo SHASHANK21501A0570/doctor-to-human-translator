@@ -1,0 +1,145 @@
+{
+  "experiment": "exp4c_zero_shot_flant5",
+  "timestamp": "2026-04-19T15:03:23.632736",
+  "description": "Zero-shot Flan-T5-Large (google/flan-t5-large), bf16, no fine-tuning, batched greedy decoding, full test sets, bootstrap 95% CIs (n=1000, seed=42). Encoder truncated at 512 tokens (T5 trained context length). Note: BioBART (Exp 4a) uses encoder_max_length=1024 \u2014 this difference is inherent to each model's architecture and training.",
+  "model": "google/flan-t5-large",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "vram_gb": 85.1,
+  "precision": "bf16",
+  "architecture": "encoder-decoder (seq2seq)",
+  "seed": 42,
+  "generation_config": {
+    "max_new_tokens": 1024,
+    "encoder_max_length": 512,
+    "do_sample": false,
+    "repetition_penalty": 1.1,
+    "batch_short": 128,
+    "batch_long": 64
+  },
+  "test_sizes": {
+    "sells": 23416,
+    "medlane": 1010,
+    "cochrane": 480,
+    "plaba": 1000
+  },
+  "library_versions": {
+    "transformers": "5.0.0",
+    "torch": "2.10.0+cu128",
+    "datasets": "4.0.0",
+    "bert_score": "0.3.12"
+  },
+  "results": {
+    "sells": {
+      "n": 23416,
+      "sari": 7.6,
+      "bert_f1": 0.6563,
+      "ent_p": 0.9912,
+      "ent_r": 0.9917,
+      "ent_f1": 0.991,
+      "d_fre": 0.08,
+      "d_fkg": -0.03,
+      "n_empty": 0,
+      "n_read": 23416,
+      "sari_ci": [
+        7.5409,
+        7.6615
+      ],
+      "bert_f1_ci": [
+        0.6554,
+        0.6571
+      ],
+      "ent_f1_ci": [
+        0.9903,
+        0.9915
+      ],
+      "d_fre_ci": [
+        0.0475,
+        0.1109
+      ]
+    },
+    "medlane": {
+      "n": 1010,
+      "sari": 30.19,
+      "bert_f1": 0.897,
+      "ent_p": 0.9873,
+      "ent_r": 0.9875,
+      "ent_f1": 0.9866,
+      "d_fre": 0.08,
+      "d_fkg": -0.01,
+      "n_empty": 0,
+      "n_read": 1010,
+      "sari_ci": [
+        29.8616,
+        30.5226
+      ],
+      "bert_f1_ci": [
+        0.8921,
+        0.9019
+      ],
+      "ent_f1_ci": [
+        0.9831,
+        0.9897
+      ],
+      "d_fre_ci": [
+        -0.1039,
+        0.255
+      ]
+    },
+    "cochrane": {
+      "n": 480,
+      "sari": 29.04,
+      "bert_f1": 0.5903,
+      "ent_p": 0.9502,
+      "ent_r": 0.4394,
+      "ent_f1": 0.5416,
+      "d_fre": -5.65,
+      "d_fkg": 1.19,
+      "n_empty": 0,
+      "n_read": 480,
+      "sari_ci": [
+        28.2007,
+        29.8006
+      ],
+      "bert_f1_ci": [
+        0.5845,
+        0.596
+      ],
+      "ent_f1_ci": [
+        0.516,
+        0.5666
+      ],
+      "d_fre_ci": [
+        -7.2059,
+        -4.0805
+      ]
+    },
+    "plaba": {
+      "n": 1000,
+      "sari": 19.25,
+      "bert_f1": 0.7979,
+      "ent_p": 0.9866,
+      "ent_r": 0.9845,
+      "ent_f1": 0.9848,
+      "d_fre": 0.25,
+      "d_fkg": -0.05,
+      "n_empty": 0,
+      "n_read": 1000,
+      "sari_ci": [
+        18.6169,
+        19.8869
+      ],
+      "bert_f1_ci": [
+        0.7911,
+        0.8045
+      ],
+      "ent_f1_ci": [
+        0.9813,
+        0.9882
+      ],
+      "d_fre_ci": [
+        0.1071,
+        0.3925
+      ]
+    }
+  }
+}
