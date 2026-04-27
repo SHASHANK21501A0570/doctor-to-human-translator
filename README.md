@@ -129,8 +129,6 @@ doctor-to-human-translator/
 
 ```bash
 git clone https://github.com/SHASHANK21501A0570/doctor-to-human-translator.git
-cd doctor-to-human-translator
-pip install -r requirements.txt
 ```
 
 **Key dependencies:** `transformers`, `peft`, `bitsandbytes`, `trl`, `datasets`, `evaluate`, `bert_score`, `nltk`
@@ -148,8 +146,6 @@ pip install -r requirements.txt
 | `baseline-models` | Exp_01, Exp_02_2, exp_4a, exp_4c notebooks |
 | `primary-model` | Exp_3a, Exp_3b notebooks |
 | `results` | All evaluation metric files, predictions, human eval |
-| `experiments` | Exp 2v2 training configs |
-| `inference-api` | Inference wrapper for final model |
 
 ---
 
