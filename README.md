@@ -13,17 +13,7 @@ A research project from Northeastern University's CS 6120 (Natural Language Proc
 
 ---
 
-## Team
 
-| Member | Role |
-|--------|------|
-| Ning-Hsuan | |
-| Theresa | |
-| Kishan | |
-| Shashank | |
-| Siddarth | |
-
----
 
 ## Model & approach
 
